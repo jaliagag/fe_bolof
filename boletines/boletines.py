@@ -3,7 +3,7 @@ import reflex as rx
 from boletines.views.navbar import navbar
 from boletines.views.menu import menu
 from boletines.views.body import body
-from boletines.components.list_files import list_files
+from boletines.components.list_files import list_files, index2
 
 
 class State(rx.State):
@@ -16,24 +16,19 @@ def index() -> rx.Component:
     return rx.box(
         navbar(),
         rx.box(
+            #menu(),
             rx.center(
-                menu(),
-                body(),
+                rx.vstack(
+                    #body(),
+                    #list_files(),
+                    index2(),
+                    width="100%"
+                ),
+                bg="black"
 
             )
-        )
-        #rx.center(
-        #    #menu(),
-        #    rx.vstack(
-        #        body(),
-        #        list_files(),
-        #        max_width="1200px",
-        #        width="100%",
-        #        margin_y="1em",
-
-        #    )
-
-        #)
+        ),
+        bg="black",
     )
 
 
