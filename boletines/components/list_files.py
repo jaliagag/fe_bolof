@@ -1,30 +1,17 @@
 import reflex as rx
-from typing import List
+from boletines.components.link_button import link_button
 
 import os
 
-
-def listme(list: list):
-    for i in list:
-        return i
-
-
 directory = os.listdir(".")
-
-# The rx.foreach component takes an iterable(list, tuple or dict) and a
-# function that renders each item in the list.
-
 
 def list_files() -> rx.Component:
     return rx.box(rx.text(len(directory)))
 
 
-# print(directory)
-
-
 def boxes(lt: str):
     return rx.square(
-        lt,
+        link_button(lt, "hola"),
         bg="blue",
         color="white",
         margin="2em",

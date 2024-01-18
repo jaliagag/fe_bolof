@@ -3,3 +3,4 @@
 .web
 __pycache__/virtual/
 virtual/
+.DS_Store

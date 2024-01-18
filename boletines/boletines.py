@@ -1,10 +1,14 @@
 """Welcome to Reflex! This file outlines the steps to create a basic app."""
+import os 
 import reflex as rx
 from boletines.views.navbar import navbar
 from boletines.views.menu import menu
 from boletines.views.body import body
-from boletines.components.list_files import list_files, index2
+from boletines.views.output import output
+from boletines.components.list_files import index2
 
+current = os.getcwd()
+ls = os.listdir("assets")
 
 class State(rx.State):
     """The app state."""
@@ -28,6 +32,8 @@ def index() -> rx.Component:
 
             )
         ),
+        output(current),
+        output(ls),
         bg="black",
     )
 
