@@ -23,7 +23,7 @@ def index() -> rx.Component:
             #menu(),
             rx.center(
                 rx.vstack(
-                    #body(),
+                    body(),
                     #list_files(),
                     index2(),
                     width="100%"

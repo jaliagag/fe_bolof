@@ -1,22 +1,14 @@
 import reflex as rx
+from boletines.components.box import box
+import os
 
-def body() -> rx.Component:
-    return rx.box(
-        rx.text("hola",color="white",width="100%"),
-        rx.text("hola",color="white",width="100%"),
-        rx.text("hola",color="white",width="100%"),
-        rx.text("hola",color="white",width="100%"),
-        rx.text("hola",color="white",width="100%"),
-        rx.text("hola",color="white",width="100%"),
-        rx.text("hola",color="white",width="100%"),
-        rx.text("hola",color="white",width="100%"),
-        rx.text("hola",color="white",width="100%"),
-        rx.text("hola",color="white",width="100%"),
-        rx.text("hola",color="white",width="100%"),
-        rx.text("hola",color="white",width="100%"),
-        rx.text("hola",color="white",width="100%"),
-        bg="blue",
-        
+directory = os.listdir(".")
 
+def list_files() -> rx.Component:
+    return rx.box(rx.text(len(directory)))
+
+def body():
+    return rx.responsive_grid(
+        rx.foreach(directory, box),
+        columns=[2, 4, 6],
     )
-  
