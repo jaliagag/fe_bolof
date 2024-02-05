@@ -1,11 +1,18 @@
 import reflex as rx
-from boletines.components.link_button import link_button
+
 
 def box(lt: str):
-    return rx.square(
-        link_button(lt, "hola"),
-        bg="blue",
-        color="white",
-        margin="2em",
-        padding=10
+    return rx.button(
+        rx.vstack(
+            rx.image(src="folder.png", width="50px", height="auto", alt="a folder image"),
+            rx.vstack(
+                rx.text(lt)
+            )
+        ),
+        variant="outline",
+        bg="white",
+        padding=10,
+        margin="1em",
+        on_click=rx.redirect("https://www.google.com", external=True)
+        # link_button(lt, "hola"), bg="blue", color="white", margin="2em", padding=10
     )
