@@ -1,7 +1,7 @@
 import reflex as rx
 
 
-def box(lt: str):
+def box(lt: str) -> rx.Component:
     return rx.button(
         rx.vstack(
             rx.image(src="folder.png", width="50px", height="auto", alt="a folder image"),

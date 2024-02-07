@@ -4,6 +4,7 @@ import reflex as rx
 from boletines.views.navbar import navbar
 from boletines.views.body import body
 from boletines.views.output import output
+from boletines.tests import test1
 
 current = os.getcwd()
 ls = os.listdir("assets")
@@ -27,7 +28,7 @@ class State(rx.State):
     
     pass
 
-@rx.page()
+@rx.page(title="Boletines Oficiales - ARG")
 def index() -> rx.Component:
     return rx.box(
         navbar(),
@@ -46,10 +47,11 @@ def index() -> rx.Component:
         bg="black",
     )
 
-@rx.page()
-def about() -> rx.Component:
+@rx.page(title="Boletines Oficiales - ARG")
+def test() -> rx.Component:
     return rx.text(
-        "holis"
+        "testing grounds biotch",
+        test1.but()
     )
 
 # Add state and page to the app.
